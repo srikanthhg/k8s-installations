@@ -22,12 +22,19 @@ spec:
     name: frontend
   spec:
    containers:
-    - image: nginx
+    - image: almalinux
       name: myimage
       command: ["sleep" , "100000"]
       ports:
       - containerPort: 80
 
+# kubectl get deployment mydeployment
 # kubectl rollout status deployment/deployment_name
+
 # kubectl rollout undo deployment/deployment_name
+# kubectl rollout undo deployment/deployment_name --to-revision=3
+
 # kubectl rollout history deployment/deployment_name
+# kubectl rollout histoy deployment/deployment_name --revision=3
+
+# Here deployment_name is mydeployment
