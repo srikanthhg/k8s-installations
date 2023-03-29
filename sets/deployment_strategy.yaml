@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: mydeployment
+ labels:
+  name: frontend
+spec:
+ replicas: 20
+ strategy:
+  type: RollingUpdate
+  rollingUpdate:
+   maxUnavailable: 1
+   maxSurge: 1
+ selector:
+  matchLabels:
+   name: frontend
+ template:
+  metadata:
+   labels:
+    name: frontend
+  spec:
+   containers:
+    - image: nginx
+      name: myimage
+      ports:
+      - containerPort: 80
