@@ -20,7 +20,7 @@ spec:
     name: frontend
   spec:
    containers:
-    - image: alpine
+    - image: nginx
       name: myimage
       ports:
       - containerPort: 80
