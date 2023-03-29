@@ -6,7 +6,7 @@ metadata:
   name: mydep
   tier: frontendUI
 spec:
- replicaSet: 3
+ replicas: 3
  selector:
   matchLabels:
    tier: frontendUI
