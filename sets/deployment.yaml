@@ -12,7 +12,7 @@ spec:
    tier: frontendUI
  template:
   metadata:
-   label:
+   labels:
     tier: frontendUI
   spec:
    containers:
