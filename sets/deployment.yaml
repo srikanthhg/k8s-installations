@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: mydeployment
+ labels:
+  name: mydep
+  tier: frontendUI
+spec:
+ replicaSet: 3
+ selector:
+  matchLabels:
+   tier: frontendUI
+ template:
+  metadata:
+   label:
+    tier: frontendUI
+  spec:
+   containers:
+    - image: nginx
+      name: myimage
+  
