@@ -1,0 +1,41 @@
+AWS CLI Installation: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+
+
+sudo ./aws/install
+
+
+Note
+To update your current installation of the AWS CLI, add your existing symlink and installer information to construct the install command with the --update parameter.
+
+sudo ./aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --update
+
+aws --version
+
+-------------------------------------------------------------------------------------------------------
+
+eksctl Installation: https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html
+curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+
+
+sudo mv /tmp/eksctl /usr/local/bin
+
+eksctl version
+--------------------------------------------------------------------------------------------------------
+
+kubectl Installation: https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
+
+You must use a kubectl version that is within one minor version difference of your cluster. 
+For example, a v1.26 client can communicate with v1.25, v1.26, and v1.27 control planes. 
+Using the latest compatible version of kubectl helps avoid unforeseen issues.
+
+Kubernetes 1.24
+curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.24.10/2023-01-30/bin/linux/amd64/kubectl
+
+chmod +x kubectl
+
+sudo mv kubectl /usr/local/bin/kubectl
+
+kubectl version --short --client

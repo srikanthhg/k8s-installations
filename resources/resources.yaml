@@ -1,0 +1,44 @@
+---
+apiVersion: v1
+kind: LimitRange
+metadata:
+ name: cpu-resource-constraint
+spec:
+ limits:
+- default: # this section defines default limits
+    cpu: 500m
+  defaultRequest: # this section defines default requests
+    cpu: 500m
+  max: # max and min define the limit range
+    cpu: "1"
+  min:
+    cpu: 100m
+  type: Container
+---
+
+apiVersion: v1
+kind: Pod
+metadata:
+ name: mypod
+ namespace: roboshop
+spec:
+ containers:
+ - image: nginx
+   name: myimage
+   ports:
+   - containerPort: 80
+  #  resources:
+  #   requests:
+  #     cpu: "100m"  #1cpu = 1000m
+  #     memory: "256Mi"
+  #   limits:
+  #     cpu: "200m"
+  #     memory: "500Mi"
+
+
+# requests: softlimit
+# limits: hardlimit
+# In this example, the resources field specifies both resource requests and limits for the my-container container. 
+# The requests field specifies the minimum amount of resources that the container requires to run, while the limits field specifies the maximum amount of resources that the container can consume.
+
+# For example, the requests.memory field specifies that the container requires at least 256 megabytes of memory, while the limits.cpu field specifies that the container can consume up to 500 milli-CPUs (half a CPU).

@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: mypod
+spec:
+ containers:
+ - image: nginx
+   name: myimage
+   imagePullPolicy: Always
+
+# imagePullPolicy are:
+
+# Always: Kubernetes always pulls the latest version of the specified container image.
+
+# IfNotPresent: Kubernetes only pulls the container image if it's not already present on the node.
+
+# Never: Kubernetes never pulls the container image, assuming that it's already present on the node.

@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: mypod
+ labels:
+  course: docker
+  duration: 25hrs
+  trainer: srikanth
+ annotations:
+  org.docker.kubernetes.image.maintainer: siva
+spec:
+ containers:
+ - image: nginx
+   name: myimage
+   ports:
+  - containerPorts: 80
+
+
+
+
+# Labels are key/value pairs that are used to organize and select objects. 
+# You can use labels to group related objects together and select them based on their shared characteristics. 
+# Labels are often used for operations like service discovery, scaling, and rolling updates.
+
+# In Kubernetes, labels are key/value pairs that are attached to objects like pods, services, and deployments to help organize and select them. 
+# You can add labels to your Kubernetes objects using the metadata.labels field in your YAML file.
+
+# Annotations, on the other hand, are key/value pairs that are used to attach arbitrary non-identifying metadata to objects. 
+# You can use annotations to provide additional information about objects, such as version numbers, release notes, or contact information for the team responsible for the object.
