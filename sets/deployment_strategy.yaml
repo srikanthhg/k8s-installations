@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
  name: mydeployment
+ annotations:
+  deployment.kubernetes.io/change-cause: "upgraded to version 2.0"
  labels:
   name: frontend
 spec:
@@ -22,5 +24,10 @@ spec:
    containers:
     - image: nginx
       name: myimage
+      command: ["sleep" , "100000"]
       ports:
       - containerPort: 80
+
+# kubectl rollout status deployment/deployment_name
+# kubectl rollout undo deployment/deployment_name
+# kubectl rollout history deployment/deployment_name
