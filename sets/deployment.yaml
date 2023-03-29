@@ -16,6 +16,8 @@ spec:
     tier: frontendUI
   spec:
    containers:
-    - image: nginx
+    - image: nginx:alpine
       name: myimage
+      ports:
+       - containerPort: 80
   
