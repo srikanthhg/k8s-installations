@@ -1,0 +1,23 @@
+# https://www.alibabacloud.com/blog/kubernetes-volume-basics-emptydir-and-persistentvolume_594834
+apiversion: v1
+kind: Pod
+metadata: 
+ name: simple-webapp
+ labels:
+ app: webapp
+spec:
+ containers:
+  - image: nginx
+    name: main-application
+    volumeMounts:
+     - name: shared-logs
+       mountpath: /var/log/nginx
+  - image: busybox
+    name: sidecar-container
+    command: ["sh","-c","while true; do cat/var/log/nginx/access.log; sleep 30; done"]
+    volumeMounts:
+    - name: shared-logs
+      mounrPath: /var/log/nginx
+ volumes:
+ - name: shared-logs
+   emptyDir: {}
