@@ -14,10 +14,13 @@ spec:
        mountpath: /var/log/nginx
   - image: busybox
     name: sidecar-container
-    command: ["sh","-c","while true; do cat/var/log/nginx/access.log; sleep 30; done"]
+    command: ["sh","-c","while true; do cat /var/log/nginx/access.log; sleep 30; done"]
     volumeMounts:
     - name: shared-logs
       mounrPath: /var/log/nginx
  volumes:
  - name: shared-logs
    emptyDir: {}
+
+# kubectl exec -it simple-webapp -c busybox --sh
+# busybox we don't have bash
