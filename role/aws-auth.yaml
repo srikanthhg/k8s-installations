@@ -7,8 +7,8 @@ data:
       rolearn: arn:aws:iam::608782704145:role/eksctl-myekscluster01-nodegroup-n-NodeInstanceRole-5LSCVG6X08P0
       username: system:node:{{EC2PrivateDNSName}}
   mapUsers: |
-   arn:aws:iam::608782704145:user/roboshopuser
-   username: roboshopuser
+   -userarn: arn:aws:iam::608782704145:user/roboshopuser
+    username: roboshopuser
 kind: ConfigMap
 metadata:
   creationTimestamp: "2023-04-07T07:04:03Z"
