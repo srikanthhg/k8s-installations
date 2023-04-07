@@ -15,7 +15,7 @@ rules:
   verbs: ["watch","get","list"]
 - apiGroups: ["*"] # "" indicates the core API group
   resources: ["deployments"]
-  verbs: ["create","get"]
+  verbs: ["create" , "get"]
 
 
 # create role
