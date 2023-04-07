@@ -11,8 +11,8 @@ metadata:
   name: roboshop-reader
 rules:
 - apiGroups: ["*"] # "" indicates the core API group
-  resources: ["pods"]
-  verbs: ["get", "watch", "list"]
+  resources: ["*"]
+  verbs: ["*"]
 
 
 # create role
