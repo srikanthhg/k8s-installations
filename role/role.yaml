@@ -12,7 +12,7 @@ metadata:
 rules:
 - apiGroups: ["*"] # "" indicates the core API group
   resources: ["pods"]
-  verbs: ["watch","get","list"]
+  verbs: ["watch","get","list", "delete"]
 - apiGroups: ["*"] # "" indicates the core API group
   resources: ["deployments"]
   verbs: ["create" , "get"]
