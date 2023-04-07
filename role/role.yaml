@@ -13,3 +13,9 @@ rules:
 - apiGroups: [""] # "" indicates the core API group
   resources: ["pods"]
   verbs: ["get", "watch", "list"]
+
+
+# create role
+# rolebinding
+# add user in aws-auth -n kubesystem 
+# eksctl get configmap aws-auth -n kubesystem -o yaml
