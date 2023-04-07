@@ -1,0 +1,18 @@
+apiVersion: v1
+data:
+  mapRoles: |
+    - groups:
+      - system:bootstrappers
+      - system:nodes
+      rolearn: arn:aws:iam::608782704145:role/eksctl-myekscluster01-nodegroup-n-NodeInstanceRole-5LSCVG6X08P0
+      username: system:node:{{EC2PrivateDNSName}}
+  mapUsers: |
+   arn:aws:iam::608782704145:user/roboshopuser
+   username: roboshopuser
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2023-04-07T07:04:03Z"
+  name: aws-auth
+  namespace: kube-system
+  resourceVersion: "1479"
+  uid: af19499d-1c18-459e-8469-0204636f1104
