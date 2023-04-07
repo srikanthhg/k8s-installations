@@ -10,7 +10,7 @@ metadata:
   namespace: roboshop
   name: roboshop-reader
 rules:
-- apiGroups: [""] # "" indicates the core API group
+- apiGroups: ["*"] # "" indicates the core API group
   resources: ["pods"]
   verbs: ["get", "watch", "list"]
 
@@ -19,3 +19,4 @@ rules:
 # rolebinding
 # add user in aws-auth -n kubesystem 
 # eksctl get configmap aws-auth -n kubesystem -o yaml
+# aws eks update-kubeconfig --region us-east-1 --name clustername
