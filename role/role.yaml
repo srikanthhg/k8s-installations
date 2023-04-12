@@ -21,5 +21,5 @@ rules:
 # create role
 # rolebinding
 # add user in aws-auth -n kubesystem 
-# eksctl get configmap aws-auth -n kubesystem -o yaml
+# kubectl get configmap aws-auth -n kube-system -o yaml
 # aws eks update-kubeconfig --region us-east-1 --name clustername
